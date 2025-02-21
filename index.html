@@ -4,132 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RegX Prototype</title>
-
-    <style>
-
-        .challenges {
-            background-color: white;
-            font-size: 20px;
-            border: 1px solid #333;
-            border-radius: 0.5em;
-            font-weight: bold;
-            margin: 10px 0;
-            padding: 0.5em;
-            user-select: none;
-        }
-
-        .captured-group {
-            color: red;
-        }
-
-        #challenges-container {
-            width: 35%;
-            border: 1px solid #333;
-            background-color: #f0f0f0;
-            border-radius: 0.5em;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-sizing: border-box;
-        }
-
-        #regex-container {
-            width: 35%;
-            display: flex;
-            flex-direction: column;
-            padding: 0.5em;
-            box-sizing: border-box;
-        }
-
-        #regex-container input {
-            padding: 0.5em;
-            border: 1px solid #333;
-            border-radius: 0.5em;
-        }
-
-        input {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1.2em;
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="/assets/styles/index.css">
+    <script src="./assets/js/index.js"></script>
 </head>
 <body>
     
-    <div id="regex-container">
+    <div id="container-regex">
         <input type="text" id="regex" placeholder=">">
     </div>
 
-    <div id="challenges-container">
-        <p class="challenges" enabled="false">ABC-1234</p>
-        <p class="challenges" enabled="false">ABC-123</p>
-        <p class="challenges" enabled="false">AB-1234</p>
+    <div id="container-challenges">
+        <p class="tile-challenge" enabled="false">ABC-1234</p>
+        <p class="tile-challenge" enabled="false">ABC-123</p>
+        <p class="tile-challenge" enabled="false">AB-1234</p>
     </div>
-
-    <script>
-        
-        // Extract all the challenges
-        const challenges = document.querySelectorAll('.challenges');
-        
-        // Get the regex input
-        const regexInput = document.getElementById('regex');
-
-        /**
-         * Highlights the matched text by wrapping it in a span with the captured-group class which is styled to be red.
-         * *
-         * @param {string} text - The original text to process
-         * @param {RegExpMatchArray} match - The match object containing the match information
-         * @returns {string} The text with the matched portion wrapped in a highlighting span
-         */
-        function highlightMatch(text, match) {
-            
-            // Get the full match
-            const fullMatch = match[0];
-
-            // Get the start position of the match
-            const startPos = match.index;
-            
-            // Get the text before the match
-            const before = text.slice(0, startPos);
-
-            // Get the text after the match
-            const after = text.slice(startPos + fullMatch.length);
-
-            // Return the text with the matched portion wrapped in a highlighting span
-            return before + `<span class="captured-group">${fullMatch}</span>` + after;
-            
-        }
-
-        // Add an event listener to the regex input
-        regexInput.addEventListener('input', (e) => {
-            
-            // Get the regex string by taking the event target value
-            const regexStr = e.target.value;
-            
-            /*
-                Try to match the regex with the challenge texts and highlighted matches 
-                if necessary, otherwise show original texts.
-            */
-            challenges.forEach(challenge => {
-                const currentChallengeText = challenge.textContent;
-                try {
-                    const match = currentChallengeText.match(new RegExp(regexStr));
-                    if (match) {
-                        challenge.innerHTML = highlightMatch(currentChallengeText, match);
-                    } else {
-                        challenge.textContent = currentChallengeText;
-                    }                
-                } catch (error) {
-                    challenge.textContent = currentChallengeText;
-                }
-            });
-
-        });
-
-    </script>
 
 </body>
 </html>
