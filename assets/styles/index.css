@@ -1,5 +1,20 @@
+.first-color { 
+	background: #d5def5; 
+}
+	
+.second-color { 
+	background: #8594e4; 
+}
 
- .tile-challenge {
+.third-color { 
+	background: #6643b5; 
+}
+
+.fourth-color { 
+	background: #430f58; 
+}
+ 
+.tile-challenge {
     background-color: white;
     border: 1px solid #333;
     border-radius: 0.5em;
@@ -8,11 +23,11 @@
     margin: 10px 0;
     padding: 0.5em;
     user-select: none;
-   }
+}
 
 .captured-group {
     color: red;
-   }
+}
 
 #container-challenges {
     align-items: center;
@@ -25,7 +40,7 @@
     gap: 10px;
     justify-content: center;
     width: 35%;
-   }
+}
 
 #container-regex {
     box-sizing: border-box;
@@ -33,13 +48,13 @@
     flex-direction: column;
     padding: 0.5em;
     width: 35%;
-   }
+}
 
 #container-regex input {
     border: 1px solid #333;
     border-radius: 0.5em;
     padding: 0.5em;
-   }
+}
 
 input {
     font-family: 'Courier New', Courier, monospace;
