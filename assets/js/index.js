@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const challenges = document.querySelectorAll('.tile-challenge');
         
     // Get the regex input
-    const regexInput = document.getElementById('regex');
+    const regexInput = document.getElementById('input-regex');
 
     /**
      * Highlights the matched text by wrapping it in a span with the captured-group class which is styled to be red.
@@ -46,9 +46,21 @@ document.addEventListener('DOMContentLoaded', () => {
         challenges.forEach(challenge => {
             const currentChallengeText = challenge.textContent;
             try {
+
+                challenge.classList.remove('challenge-full-match');
+
                 const match = currentChallengeText.match(new RegExp(regexStr));
+                
                 if (match) {
+                
+                    const matchLength = match[0].length;
+                    const challengeLength = currentChallengeText.length;
+                    if (matchLength === challengeLength) {
+                        challenge.classList.add('challenge-full-match');
+                    }
+                
                     challenge.innerHTML = highlightMatch(currentChallengeText, match);
+                
                 } else {
                     challenge.textContent = currentChallengeText;
                 }                

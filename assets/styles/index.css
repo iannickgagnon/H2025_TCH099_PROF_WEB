@@ -1,20 +1,28 @@
-.first-color { 
-	background: #d5def5; 
-}
-	
-.second-color { 
-	background: #8594e4; 
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+    --first-color: #d5def5;
+    --second-color: #8594e4;
+    --third-color: #6643b5;
+    --fourth-color: #430f58;
+    --main-font: 'VT323', monospace;
 }
 
-.third-color { 
-	background: #6643b5; 
+body {
+    height: 100vh;
+    background: linear-gradient(
+        var(--third-color),
+        black
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
 }
 
-.fourth-color { 
-	background: #430f58; 
-}
- 
 .tile-challenge {
+    font-family: var(--main-font);
     background-color: white;
     border: 1px solid #333;
     border-radius: 0.5em;
@@ -31,7 +39,7 @@
 
 #container-challenges {
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: var(--second-color);
     border: 1px solid #333;
     border-radius: 0.5em;
     box-sizing: border-box;
@@ -39,15 +47,14 @@
     flex-direction: column;
     gap: 10px;
     justify-content: center;
-    width: 35%;
+    width: 50%;
 }
 
 #container-regex {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    padding: 0.5em;
-    width: 35%;
+    width: 50%;
 }
 
 #container-regex input {
@@ -56,7 +63,23 @@
     padding: 0.5em;
 }
 
-input {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2em;
+#input-regex {
+    background-color: black;
+    color: rgb(0, 255, 0);
+    font-family: var(--main-font);
+    font-size: 1.25em;
+    caret-color: transparent;
+}
+
+#input-regex:focus::placeholder {
+    color: rgb(0, 255, 0);
+}
+
+#input-regex:focus {
+    outline: none;
+    border: 1px solid transparent;
+}
+
+.challenge-full-match { 
+    background-color: lightgreen;
 }
