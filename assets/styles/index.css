@@ -3,29 +3,30 @@
 
 :root {
     --first-color: #d5def5;
-    --second-color: #8594e4;
-    --third-color: #6643b5;
     --fourth-color: #430f58;
     --main-font: 'VT323', monospace;
+    --second-color: #8594e4;
+    --third-color: #6643b5;
 }
 
 body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
     height: 100vh;
-    background: linear-gradient(
+
+background: linear-gradient(
         var(--third-color),
         black
     );
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5em;
 }
 
 .tile-challenge {
-    font-family: var(--main-font);
     background-color: white;
     border: 1px solid #333;
     border-radius: 0.5em;
+    font-family: var(--main-font);
     font-size: 20px;
     font-weight: bold;
     margin: 10px 0;
@@ -45,7 +46,6 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 10px;
     justify-content: center;
     width: 50%;
 }
@@ -65,10 +65,10 @@ body {
 
 #input-regex {
     background-color: black;
+    caret-color: transparent;
     color: rgb(0, 255, 0);
     font-family: var(--main-font);
     font-size: 1.25em;
-    caret-color: transparent;
 }
 
 #input-regex:focus::placeholder {
@@ -76,10 +76,10 @@ body {
 }
 
 #input-regex:focus {
-    outline: none;
     border: 1px solid transparent;
+    outline: none;
 }
 
-.challenge-full-match { 
-    background-color: lightgreen;
-}
+.challenge-full-match {
+      background-color: lightgreen;
+  }
