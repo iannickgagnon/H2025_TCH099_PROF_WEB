@@ -5,15 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RegX Prototype</title>
     <link rel="stylesheet" href="/assets/styles/index.css">
+    <link rel="stylesheet" href="/assets/styles/collapsible.css">
     <script src="./assets/js/index.js"></script>
 </head>
 <body>
     
+    <div id="container-menu">
+        <button id="icon-info" class="collapsible">≡</button>
+        <div class="content navigation">
+            <br>
+            <a href="#">Page principale</a>
+            <span>|</span>
+            <a href="#">Mon compte</a>
+            <span>|</span>
+            <a href="#">À propos</a>
+            <span>|</span>
+            <a href="#">Contact</a>
+            <br><br>
+        </div>
+    </div>
+
     <div id="container-regex">
         <p id="logo">RegX</p>
-        <p id="title">Aventure Spaciale Irrégulière</p>
+        <p id="title">Aventure Spatiale Irrégulière</p>
         <input type="text" title="Enter your regular expression here" id="input-regex" placeholder=">">
-        <div id="icon-info" title="More information">i</div>
     </div>
 
     <div id="container-challenges">

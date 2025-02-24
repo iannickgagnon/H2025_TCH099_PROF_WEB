@@ -71,4 +71,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
+    /*
+        Handle collapsible sections.
+    */
+    let collapsibles = document.getElementsByClassName("collapsible");
+
+    for (let i = 0; i < collapsibles.length; i++) {
+        collapsibles[i].addEventListener("click", function() {
+            
+            // (De)activate the current collapsible section
+            this.classList.toggle("active");
+            
+            // Get the content
+            let content = this.nextElementSibling;
+            
+            // Toggle the max-height property to show/hide the content
+            if (content.style.maxHeight){
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } 
+        
+        });
+    }
+
 });
