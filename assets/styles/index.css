@@ -7,6 +7,8 @@
     --main-font: 'VT323', monospace;
     --second-color: #8594e4;
     --third-color: #6643b5;
+    --light-green: #e0ede0;
+    --flash-green: #00ff00;
 }
 
 body {
@@ -76,10 +78,49 @@ background: linear-gradient(
 }
 
 #input-regex:focus {
-    border: 1px solid transparent;
+    border: 1px solid white;
     outline: none;
 }
 
 .challenge-full-match {
-      background-color: lightgreen;
+      background-color: var(--light-green);
   }
+
+#icon-info {
+    align-items: center;
+    background-color: var(--first-color);
+    border-radius: 1em;
+    display: flex;
+    font-family: var(--main-font);
+    height: 2em;
+    justify-content: center;
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    user-select: none;
+    width: 2em;
+    transition: transform 0.3s ease;
+}
+
+#icon-info:hover {
+    transform: scale(1.1);
+}
+
+#logo { 
+    font-family: var(--main-font);
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    color: var(--flash-green);
+    user-select: none;
+}
+
+#title {
+    font-family: var(--main-font);
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--flash-green);
+    user-select: none;
+}
