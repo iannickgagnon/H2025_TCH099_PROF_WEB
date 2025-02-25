@@ -19,14 +19,15 @@
     margin-left: 0.25em;;
 }
 
-  .content {
-    background-color: #f1f1f1;
+  .collapsible-content {
+    background-color: var(--first-color);
+    border-radius: 0.5em;
     max-height: 0;
     overflow: hidden;
     padding: 0 1em;
     transition: max-height 0.2s ease-out;
 }
 
-  .navigation {
+  #navigation {
       font-family: var(--main-font);
   }
