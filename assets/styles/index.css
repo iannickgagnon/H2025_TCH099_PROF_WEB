@@ -68,7 +68,7 @@ background: linear-gradient(
 
 #input-regex {
     background-color: black;
-    caret-color: transparent;
+    caret-color: grey;
     color: grey;
     font-family: var(--main-font);
     font-size: 1.25em;
@@ -151,4 +151,9 @@ background: linear-gradient(
 
 .hidden {
     display: none;
+}
+
+body {
+    font-size: 150%;
+    padding: 3rem;
 }
