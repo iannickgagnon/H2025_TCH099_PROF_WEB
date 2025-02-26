@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-CA">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RegX Prototype</title>
+    <title>RegX</title>
     <link rel="stylesheet" href="/assets/styles/index.css">
     <link rel="stylesheet" href="/assets/styles/collapsible.css">
     <script src="./assets/js/index.js"></script>
 </head>
 <body>
     
-    <nav id="container-menu"></nav>
+    <!-- Collapsible navigation menu -->
+    <nav id="container-menu">
         <button id="icon-info" class="collapsible">≡</button>
         <div class="collapsible-content" id="navigation">
             <br>
@@ -23,19 +24,25 @@
             <a href="#">Contact</a>
             <br><br>
         </div>
-    </div>
+    </nav>
 
+    <!-- Main content -->
     <div id="container-regex">
         <p id="logo">RegX</p>
         <p id="title">Aventure Spatiale Irrégulière</p>
+        <label for="input-regex" aria-label="Enter your regular expression"></label>
         <input type="text" title="Enter your regular expression here" id="input-regex" placeholder=">">
     </div>
 
+    <!-- Challenges -->
     <div id="container-challenges">
-        <p class="tile-challenge" enabled="false">ABC-1234</p>
-        <p class="tile-challenge" enabled="false">ABC-123</p>
-        <p class="tile-challenge" enabled="false">AB-1234</p>
+        <p class="tile-challenge">ABC-1234</p>
+        <p class="tile-challenge">ABC-123</p>
+        <p class="tile-challenge">AB-1234</p>
     </div>
+
+    <!-- Button to move to the next challenge (hidden by default) -->
+    <button class="hidden" id="btn-next">Prochaine aventure →</button>
 
 </body>
 </html>

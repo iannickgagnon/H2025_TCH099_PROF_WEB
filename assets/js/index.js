@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Extract all the challenges
     const challenges = document.querySelectorAll('.tile-challenge');
-        
+
+    // Get the number of challenges
+    const nbChallenges = challenges.length;
+
     // Get the regex input
     const regexInput = document.getElementById('input-regex');
 
@@ -43,8 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
             Try to match the regex with the challenge texts and highlighted matches 
             if necessary, otherwise show original texts.
         */
+
+        // Initialize the number of challenges completed
+        let nbChallengesCompleted = 0;
+
         challenges.forEach(challenge => {
+
+            // Get the current challenge text
             const currentChallengeText = challenge.textContent;
+
             try {
 
                 challenge.classList.remove('challenge-full-match');
@@ -57,17 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     const challengeLength = currentChallengeText.length;
                     if (matchLength === challengeLength) {
                         challenge.classList.add('challenge-full-match');
+                        nbChallengesCompleted++;
                     }
                 
                     challenge.innerHTML = highlightMatch(currentChallengeText, match);
                 
                 } else {
                     challenge.textContent = currentChallengeText;
-                }                
+                }
+
             } catch (error) {
                 challenge.textContent = currentChallengeText;
             }
+
         });
+
+        // Show the next button if all challenges are completed
+        if (nbChallengesCompleted === nbChallenges) {
+            document.getElementById('btn-next').classList.remove('hidden');
+        } else {
+            document.getElementById('btn-next').classList.add('hidden');
+        }
 
     });
 
